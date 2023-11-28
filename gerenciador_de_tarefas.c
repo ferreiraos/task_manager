@@ -60,5 +60,14 @@ int main() {
     cadastrar_tarefa(&minha_tarefa);
     editar_tarefa(&minha_tarefa);
 
+     // Imprimindo as informações da tarefa
+    printf("----- Informacoes da Tarefa -----\n");
+    printf("Titulo: %s", minha_tarefa.titulo);
+    printf("Descricao: %s", minha_tarefa.descricao);
+    printf("Data: %s", ctime(&minha_tarefa.data_criacao));
+    printf("Prazo de Conclusao: %d/%d/%d\n", minha_tarefa.prazo_conclusao.tm_mday, minha_tarefa.prazo_conclusao.tm_mon + 1, minha_tarefa.prazo_conclusao.tm_year + 1900);
+    printf("Status: %s\n", minha_tarefa.status ? "Concluida" : "Pendente");
+    printf("---------------------------------\n");
+
     return 0;
 }
